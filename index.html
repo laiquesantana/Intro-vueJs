@@ -26,6 +26,19 @@
       <p v-else>Out of Stock</p>
       <span v-if="onSale">On Sale!</span>
 
+      <ul > 
+        <li v-for="detail in details "> {{detail}}</li>
+    </ul>
+
+      <ul>
+        <li v-for="size in sizes">{{ size }}</li>
+      </ul>
+
+
+      <div v-for="variant in variants" :key="variant.variantId">
+        <p>{{ variant.variantColor }}</p>
+      </div>
+
       <a :href="link" target="_blank">More products like this</a>
     </div>
     
@@ -49,7 +62,20 @@ var app = new Vue({
      inStock: true,
     onSale: true,
     image: './assets/vmSocks-green-onWhite.jpg',
-    link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks'
+    link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
+        details: ['80% cotton', '20% polyester', 'Gender-neutral'],
+          variants: [
+      {
+        variantId: 2234,
+        variantColor: 'green'    
+      },
+      {
+        variantId: 2235,
+        variantColor: 'blue'
+      }
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+
   } 
 });
 
