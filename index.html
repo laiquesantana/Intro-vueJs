@@ -1,22 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My first Vue app</title>
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<div id="app">
 
-</head>
-<body>
-  <div id="app">
-    {{ message }}
+  <div class="product-image">
+    <img src="" />
   </div>
 
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        message: 'Hello Vue!'
+  <div class="product-info">
+    <h1>{{ product }}</h1>
+    <p>{{ description }}</p>
+  </div>
+    
+</div> 
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+<script>
+var app = new Vue({  // new vue instance , you can think of it like a heart, that powers everything
+  el: '#app',
+  data() {
+      return {
+
+    product: 'Boots',
+    description: 'A pair of warm fuzzy socksasdsadas'
       }
-    })
-  </script>
-</body>
-</html>
+  } 
+})
+
+
+</script>
